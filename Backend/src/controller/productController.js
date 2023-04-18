@@ -45,10 +45,22 @@ const getProduct = async (req, res) => {
 }
 
 
+const getSingleProduct = async (req, res) => {
+  const { id } = req.params;
+  //   console.log(id, "patch id");
+
+  const updatedData = await productModel.findById(id 
+
+   
+  );
+  //   console.log(updatedData, "updated Data in patch");
+  return res.status(201).send(updatedData);
+};
 
 
 
-module.exports = { postProduct, getProduct, patchProduct, deleteProduct }
+
+module.exports = { postProduct, getProduct, patchProduct, deleteProduct,getSingleProduct }
 
 
 
